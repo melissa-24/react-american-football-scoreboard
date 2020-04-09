@@ -4,7 +4,7 @@
 }
 
 .scoreboard {
-  width: 58%;
+  width: 65%;
   margin: 2rem auto;
   background-color: #0b5402;
   color: white;
@@ -29,7 +29,7 @@
   place-items: center;
   border: 3px solid white;
   border-radius: 0.5rem;
-  width: 15rem;
+  width: 17rem;
 }
 
 .home {
@@ -106,13 +106,14 @@
 }
 
 .buttons {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
 }
 
 .homeButtons__touchdown,
+.reset_button,
 .homeButtons__fieldGoal,
 .awayButtons__touchdown,
 .awayButtons__fieldGoal {
