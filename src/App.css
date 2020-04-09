@@ -106,13 +106,14 @@
 }
 
 .buttons {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
 }
 
 .homeButtons__touchdown,
+.reset_button,
 .homeButtons__fieldGoal,
 .awayButtons__touchdown,
 .awayButtons__fieldGoal {
