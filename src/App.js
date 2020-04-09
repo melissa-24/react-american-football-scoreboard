@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-
   const homeInitialState = 0;
   const [home, setScoreHome] = useState(homeInitialState);
   const awayInitialState = 0;
@@ -27,7 +26,13 @@ function App() {
     setBalls(ballsInitialState);
     setStrikes(strikesInitialState);
   };
-  const addInning = () => setInning(inning + 1);
+  const addInning = () => {
+    if ((inning === 9) & (home !== away)) {
+      resetAll();
+    } else {
+      setInning(inning + 1);
+    }
+  };
   const addBalls = () => {
     if (balls === "***") {
       setBalls(ballsInitialState);
@@ -61,15 +66,12 @@ function App() {
     setOuts(outsInitialState);
   };
 
-  
-
   return (
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
             <h2 className="home__name">Yankees</h2>
-
 
             <div className="home_score">{home}</div>
           </div>
@@ -83,31 +85,45 @@ function App() {
           </div>
         </div>
         <div className="bottomRow">
-      <div className="balls">
-        <h3 className="balls_title">Balls</h3>
-        <div className="balls_value">{balls}</div>
-      </div>
-      <div className="strikes">
-        <h3 className="strikes_title">Strikes</h3>
-        <div className="strikes_value">{strikes}</div>
-      </div>
-      <div className="outs">
-        <h3 className="outs_title">Outs</h3>
-        <div className="outs_value">{outs}</div>
-      </div> 
-    </div>
+          <div className="balls">
+            <h3 className="balls_title">Balls</h3>
+            <div className="balls_value">{balls}</div>
+          </div>
+          <div className="strikes">
+            <h3 className="strikes_title">Strikes</h3>
+            <div className="strikes_value">{strikes}</div>
+          </div>
+          <div className="outs">
+            <h3 className="outs_title">Outs</h3>
+            <div className="outs_value">{outs}</div>
+          </div>
+        </div>
       </section>
       <section className="buttons">
         <div className="homeButtons">
-          <button className="homeButtons__run" onClick={addYankeesRun}>Yankees Score a Run</button>
-          <button className="innings_button" onClick={addInning}>Next Inning</button>
-          <button className="balls_button" onClick={addBalls}>Ball Thrown</button>
-          <button className="strike_button" onClick={addStrikes}>Strike Thrown</button>
-          <button className="out_button" onClick={addOuts}>Current Outs</button>
-          <button className="awayButtons__run" onClick={addGuestRun}>Guest Score a Run</button>
+          <button className="homeButtons__run" onClick={addYankeesRun}>
+            Yankees Score a Run
+          </button>
+          <button className="innings_button" onClick={addInning}>
+            Next Inning
+          </button>
+          <button className="balls_button" onClick={addBalls}>
+            Ball Thrown
+          </button>
+          <button className="strike_button" onClick={addStrikes}>
+            Strike Thrown
+          </button>
+          <button className="out_button" onClick={addOuts}>
+            Current Outs
+          </button>
+          <button className="awayButtons__run" onClick={addGuestRun}>
+            Guest Score a Run
+          </button>
         </div>
         <div className="awayButtons">
-          <button className="reset_button" onClick={() => resetAll()}>Reset All</button>
+          <button className="reset_button" onClick={() => resetAll()}>
+            Reset All
+          </button>
         </div>
       </section>
     </div>
