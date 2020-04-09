@@ -122,7 +122,7 @@ function App() {
         </div>
         <div className="awayButtons">
           <button className="reset_button" onClick={() => resetAll()}>
-            Reset All
+            End Game
           </button>
         </div>
       </section>
