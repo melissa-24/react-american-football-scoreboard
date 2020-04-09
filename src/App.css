@@ -21,7 +21,8 @@
 }
 
 .home,
-.away {
+.away,
+.inn {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -29,30 +30,31 @@
   place-items: center;
   border: 3px solid white;
   border-radius: 0.5rem;
-  width: 15rem;
+  width: 18rem;
 }
 
 .home {
-  background-color: #656565;
+  background-color: blue;
 }
 
 .away {
-  background-color: #af750a;
+  background-color: grey;
 }
 
 .home__name,
 .away__name,
-.down__title,
-.toGo__title,
-.ballOn__title,
-.quarter__title {
+.inning,
+.balls_title,
+.strikes_title,
+.outs_title {
   text-transform: uppercase;
   font-size: 3rem;
   padding: 2rem;
 }
 
-.home__score,
-.away__score {
+.home_score,
+.current_inning,
+.away_score {
   font-family: "Ozone";
   font-size: 7rem;
   width: 90%;
@@ -62,16 +64,6 @@
   padding: 5%;
 }
 
-.timer {
-  font-family: "Ozone";
-  font-size: 9rem;
-  padding: 2rem;
-  text-align: center;
-  background-color: var(--black);
-  border: 2px solid white;
-  border-radius: 6px;
-}
-
 .bottomRow {
   display: flex;
   justify-content: space-around;
@@ -79,24 +71,23 @@
   height: 20rem;
 }
 
-.down,
-.toGo,
-.ballOn,
-.quarter {
+.balls,
+.strikes,
+.outs{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   place-items: center;
 }
 
-.down__value,
-.toGo__value,
-.ballOn__value,
-.quarter__value {
+.balls_value,
+.strikes_value,
+.outs_value {
   font-family: "Ozone";
   font-size: 5rem;
   color: var(--red);
-  width: 7rem;
+  width: 10rem;
+  height: 5.7rem;
   text-align: center;
   background-color: var(--black);
   margin-top: 1rem;
@@ -106,16 +97,26 @@
 }
 
 .buttons {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.homeButtons__touchdown,
-.homeButtons__fieldGoal,
-.awayButtons__touchdown,
-.awayButtons__fieldGoal {
+.homeButtons__run,
+.awayButtons__run,
+.innings_button,
+.resetYankeesRuns_button,
+.resetAwayRuns_button,
+.resetInnings_button,
+.resetBalls_button,
+.resetStrikes_button,
+.resetOuts_button,
+.balls_button,
+.strike_button,
+.out_button {
   margin: 1rem;
   border-radius: 4px;
 }
